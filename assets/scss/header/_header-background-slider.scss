@@ -1,0 +1,159 @@
+.header-slider-background {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 75vh;
+  overflow: hidden;
+
+  @include md {
+    height: 480px;
+    width: $md;
+  }
+
+  @include sm {
+    height: 420px;
+    width: $sm;
+  }
+}
+ 
+.carousel{
+  position: relative;
+  height: 75vh;
+
+  @include md {
+    height: 480px;
+    width: $md;
+  }
+
+  @include sm {
+    height: 420px;
+    width: $sm;
+  }
+}
+
+.slides {
+  position: relative;
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+}
+
+.slide {
+  overflow: hidden;
+  position: absolute;
+  left: 0px;
+  top: -150px;
+  height: 1080px;
+  width: 100%;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 1s;
+  overflow: hidden;
+
+  @include md {
+    height: 650px;
+  }
+}
+
+.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.slide {
+  box-sizing: border-box;
+  background: #333;
+  color: #fff;
+}
+
+.slide:nth-of-type(1) {
+  background: black;
+}
+
+.slide:nth-of-type(2) {
+  background: black;
+}
+
+.slide:nth-of-type(3) {
+  background: black;
+}
+
+img {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.indicator-buttons {
+  position: absolute;
+  top: 92%;
+  width: 400px;
+  height: 50px;
+  z-index: 10;
+}
+
+.indicators {
+  display: none;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin-right: 50px;
+  height: 30px;
+  width: 80px;
+  padding: 0;
+  transition: 1s;
+
+  @include md {
+    height: 20px;
+    width: 50px;
+    margin-right: 35px;
+  }
+
+  @include sm {
+    height: 20px;
+    width: 40px;
+    margin-right: 15px;
+  }
+}
+
+.indicator::before {
+  content: "";
+  height: 4px;
+  width: 70px;
+  opacity: 0.9;
+  background-color: #1e1e1e;
+  border-radius: 3px;
+  transition: 0.7s;
+
+  @include md {
+    height: 4px;
+    width: 50px;
+  }
+
+  @include sm {
+    width: 30px;
+  }
+}
+
+.indicator:hover::before {
+  content: "";
+  opacity: 1;
+  background-color: #dbdfe1;
+  transform: scale(1.4);
+}
+
+.active::before {
+  content: "";
+  opacity: 1;
+  background-color: #dbdfe1;
+  transform: scale(1.4);
+}
